@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lisec Laser Bird</title>
+  <script type="module" crossorigin src="/assets/index-C6oi96Ry.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-LAGw1Xve.css">
+</head>
+
+<body>
+    <div style="font-family:Rubik; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div id="container">
+        <canvas id="game"></canvas>
+        <div id="menu">
+            <h1 class="text-1">Select Your Bird</h1>
+            <div id="bird-buttons">
+                <button class="selected" data-bird="bird-1">
+                    <img src="assets/birds/1-1.png" alt="Bird 1">
+                </button>
+                <button data-bird="bird-2">
+                    <img src="assets/birds/2-1.png" alt="Bird 2">
+                </button>
+                <button data-bird="bird-3">
+                    <img src="assets/birds/3-1.png" alt="Bird 3">
+                </button>
+            </div>
+            <button id="start-button" class="button" style="margin-top: 70px;">
+                START
+            </button>
+        </div>
+        <div id="game-overlay" style="display: none;">
+            <h5 class="text-2">Score: <span id="score">0</span></h5>
+        </div>
+        <div id="game-over" style="display: none;">
+            <h5 class="text-1" style="font-size: 60px; margin: 0 0 30px 0;">Game Over</h5>
+            <h5 class="text-1" style="font-size: 40px; margin: 0 0 30px 0;">Final Score: <span id="final-score">0</span></h5>
+            <button id="restart-button" style="margin-top: 30px;" class="button">
+                RESTART
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
