@@ -5,16 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lisec Laser Bird</title>
-  <script type="module" crossorigin src="assets/index-C6oi96Ry.js"></script>
-  <link rel="stylesheet" crossorigin href="assets/index-LAGw1Xve.css">
+  <script type="module" crossorigin src="/assets/index-CTjrIVaV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C6Q1x5Zl.css">
 </head>
 
 <body>
-    <div style="font-family:Rubik; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family:Roboto; position:absolute; left:-1000px; visibility:hidden;">.</div>
     <div id="container">
         <canvas id="game"></canvas>
         <div id="menu">
-            <h1 class="text-1">Select Your Bird</h1>
+            <div id="title">
+                <div><img src="assets/logo.png" alt="Logo"></div>
+                <div><span style="margin-top: 3px;">Save the Bird</span></div>
+            </div>
             <div id="bird-buttons">
                 <button class="selected" data-bird="bird-1">
                     <img src="assets/birds/1-1.png" alt="Bird 1">
@@ -30,15 +33,49 @@
                 START
             </button>
         </div>
+        <div id="tutorial" style="display: none;">
+            <div id="buttons">
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <span style="font-size: 30px; margin-top: 20px; margin-bottom: -20px;" class="text-3">Click</span>
+                    <img src="assets/mouse.png">
+                </div>
+                <span class="text-3" style="margin: 0 50px; margin-top: 30px; margin-right: 70px;">or</span>
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <span style="font-size: 30px; margin-top: 20px; margin-bottom: -20px;" class="text-3">Press</span>
+                    <img src="assets/space.png">
+                </div>
+            </div>
+        </div>
         <div id="game-overlay" style="display: none;">
-            <h5 class="text-2">Score: <span id="score">0</span></h5>
+            <h5 class="text-4" style="font-size: 25px; margin-top: 15px;">Score: <span id="score">0</span></h5>
         </div>
         <div id="game-over" style="display: none;">
-            <h5 class="text-1" style="font-size: 60px; margin: 0 0 30px 0;">Game Over</h5>
-            <h5 class="text-1" style="font-size: 40px; margin: 0 0 30px 0;">Final Score: <span id="final-score">0</span></h5>
+            <h5 class="text-3" style="font-size: 60px; margin: 0 0 30px 0;">Game Over</h5>
+            <h5 class="text-3" style="font-size: 40px; margin: 0 0 30px 0;">Final Score: <span id="final-score">0</span></h5>
             <button id="restart-button" style="margin-top: 30px;" class="button">
                 RESTART
             </button>
+        </div>
+    </div>
+    <div class="modal-container" id="gameover-modal" style="display: none;">
+        <div class="modal">
+            <button type="button" id="modal-close" class="modal-close" aria-label="Close">×</button>
+            <h3 class="text-2" style="margin-bottom: 20px;">High Score: <span id="high-score">0</span></h3>
+            <form id="score-form">
+                <div class="form-group">
+                    <label for="player-name">Name</label>
+                    <input type="text" id="player-name" name="name" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="player-email">Email</label>
+                    <input type="email" id="player-email" name="email" placeholder="example@mail.com" required />
+                </div>
+                <div class="form-group form-consent">
+                    <input type="checkbox" id="player-consent" name="consent" required />
+                    <label for="player-consent">I consent to the processing of my data</label>
+                </div>
+                <button type="submit" id="submit-score" class="button" style="width: 100%; margin-top: 10px;">Send</button>
+            </form>
         </div>
     </div>
 </body>
